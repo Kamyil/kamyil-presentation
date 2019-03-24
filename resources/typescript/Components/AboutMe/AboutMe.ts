@@ -25,7 +25,6 @@ export const AboutMe = (() => {
 
             hideElement ? $(element).hide('fast') : false;
 
-
             if (contentToSwitchOn == $(element).data("tab-name")) {
                 $(element).hasClass(CLASS_NAME.CONTENT) ||
                 $(element).hasClass(CLASS_NAME.HEADER_TITLE)
