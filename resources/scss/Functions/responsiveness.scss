@@ -1,0 +1,13 @@
+@import "../variables";
+
+@mixin onSmall {
+	@media (min-width: map-get($bps, md)) {
+		@content;
+	}
+}
+
+@mixin onMedium {
+	@media (min-width: map-get($bps,lg)) {
+		@content;
+	}
+}

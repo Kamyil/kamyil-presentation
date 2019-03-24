@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "Components/*": [ "resources/typescript/Components/*" ],
+        "Core/*": [ "resources/typescript/Core/*" ],
+        "Interfaces/*": [ "resources/typescript/interfaces/*" ],
+        "Tests/*": [ "resources/typescript/Tests/*" ]
+      },
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "noEmit": true,
+      "noEmitHelpers": true,
+      "skipLibCheck": true, 
+      "importHelpers": true,
+      "strictNullChecks": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowJs": true,
+      "removeComments": false,
+      "noImplicitAny": false,
+      "lib": ["es5","es2015", "es2017", "dom"],
+  //    "rootDirs": [
+  //      "resources/typescript",
+  //      "src/modules"
+  //    ],
+      "typeRoots": [
+        "node_modules/@types",
+        "resources/typescript/Interfaces"
+      ]
+    },
+    "awesomeTypescriptLoaderOptions": {
+      "forkChecker": true,
+      "useWebpackText": true
+    },
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+      "rewriteTsconfig": false
+    },
+    "include": [
+      "resources/typescript/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }

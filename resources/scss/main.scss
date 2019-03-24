@@ -1,0 +1,12 @@
+@import "./variables";
+@import "./Components/index";
+
+body {
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+    background: url('/public/build/assets/images/background.png') no-repeat center center fixed;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}

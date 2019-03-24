@@ -1,0 +1,24 @@
+@import "../core";
+
+.aboutme {
+    &__container {
+        @include onSmall {
+            $width: 90vw;
+            $height: 90vh;
+            @include box($width, $height);
+            transform: translateX(-$width/2) translateY(-$height/2);
+        }
+        @include onMedium {
+            $width: 80%;
+            $height: $width;
+            @include box($width);
+            transform: translateX(-$width/2) translateY(-$height/2);
+        }
+        
+        border-radius: 5px;
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.5);
+        top: 50%;
+        left: 50%;   
+    }
+}
