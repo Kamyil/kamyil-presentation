@@ -1,5 +1,13 @@
 @import "../core";
 
+
+@mixin hideOtherSectionsContentByDefault {
+    &[data-tab-name="technologies"], &[data-tab-name="architecture"], &[data-tab-name="jquery"] {
+        display: none;
+    }
+}
+
+
 .aboutme {
     &__container {
         @include onSmall {
@@ -8,17 +16,63 @@
             @include box($width, $height);
             transform: translateX(-$width/2) translateY(-$height/2);
         }
+
         @include onMedium {
-            $width: 80%;
-            $height: $width;
-            @include box($width);
+            $width: 90vw;
+            $height: 800px;
+            @include box($width, $height);
             transform: translateX(-$width/2) translateY(-$height/2);
         }
-        
+        @include z-index(aboutme-container);
+        display: none;
         border-radius: 5px;
         position: fixed;
         background-color: rgba(255, 255, 255, 0.5);
         top: 50%;
-        left: 50%;   
+        left: 50%;
+    }
+
+    &__tab {
+        
+        &--container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+        
+        margin: 0 5px;
+    }
+
+    &__content {
+        &--header-title {
+            @extend .heading-title;
+            @include hideOtherSectionsContentByDefault;
+        }
+
+        &--container {
+            @include box(100%, 80%);
+            margin: 0 auto;
+            display: block;
+            bottom: 0;
+            position: absolute;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        &--self {
+            img {
+                float: left;
+                margin-right: 10px;
+                border-radius: 50%;
+                width: 30%;
+                max-width: 255px;
+                @include subtleShadow(0.4);
+            }
+            margin: 20px;
+            line-height: 30px;
+            @include hideOtherSectionsContentByDefault;
+        }
     }
 }

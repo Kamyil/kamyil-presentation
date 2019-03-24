@@ -1,5 +1,5 @@
 import { SplashScreen } from './Components/SplashScreen';
-import { AboutMe } from "./Components/AboutMe";
+import { AboutMe } from "./Components/AboutMe/AboutMe";
 
 
 

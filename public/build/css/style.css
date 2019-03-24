@@ -29,23 +29,35 @@
   -ms-flex-line-pack: center;
   align-content: center; }
   .splashscreen__logo--full {
-    z-index: 3;
-    width: 50%;
+    z-index: 4;
     display: none;
-    position: fixed;
-    top: 30vh; }
+    position: fixed; }
+    @media (min-width: 0px) {
+      .splashscreen__logo--full {
+        top: 30vh;
+        width: 50%; } }
+    @media (min-width: 992px) {
+      .splashscreen__logo--full {
+        top: 10vh;
+        width: 40%; } }
   .splashscreen__logo--empty {
-    z-index: 3;
-    width: 50%;
+    z-index: 4;
     display: none;
     position: fixed;
-    top: 30vh;
     -webkit-animation-name: scaleLogo;
     animation-name: scaleLogo;
     -webkit-animation-duration: 3s;
     animation-duration: 3s;
     -webkit-animation-delay: 1s;
     animation-delay: 1s; }
+    @media (min-width: 0px) {
+      .splashscreen__logo--empty {
+        top: 30vh;
+        width: 50%; } }
+    @media (min-width: 992px) {
+      .splashscreen__logo--empty {
+        top: 10vh;
+        width: 40%; } }
   .splashscreen__title {
     font-size: 3rem;
     text-align: center;
@@ -62,12 +74,14 @@
     bottom: 18vh; }
 
 .aboutme__container {
+  z-index: 2;
+  display: none;
   border-radius: 5px;
   position: fixed;
   background-color: rgba(255, 255, 255, 0.5);
   top: 50%;
   left: 50%; }
-  @media (min-width: 768px) {
+  @media (min-width: 0px) {
     .aboutme__container {
       width: 90vw;
       height: 90vh;
@@ -75,10 +89,108 @@
       transform: translateX(-45vw) translateY(-45vh); } }
   @media (min-width: 992px) {
     .aboutme__container {
-      width: 80%;
-      height: 80%;
-      -webkit-transform: translateX(-40%) translateY(-40%);
-      transform: translateX(-40%) translateY(-40%); } }
+      width: 90vw;
+      height: 800px;
+      -webkit-transform: translateX(-45vw) translateY(-400px);
+      transform: translateX(-45vw) translateY(-400px); } }
+
+.aboutme__tab {
+  margin: 0 5px; }
+  .aboutme__tab--container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 50px; }
+
+.aboutme__content--header-title[data-tab-name="technologies"], .aboutme__content--header-title[data-tab-name="architecture"], .aboutme__content--header-title[data-tab-name="jquery"] {
+  display: none; }
+
+.aboutme__content--container {
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+  display: block;
+  bottom: 0;
+  position: absolute;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.aboutme__content--self {
+  margin: 20px;
+  line-height: 30px; }
+  .aboutme__content--self img {
+    float: left;
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 30%;
+    max-width: 255px;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4); }
+  .aboutme__content--self[data-tab-name="technologies"], .aboutme__content--self[data-tab-name="architecture"], .aboutme__content--self[data-tab-name="jquery"] {
+    display: none; }
+
+/** @params
+  ( "tab-class-name"            : string,
+    width
+    height
+    background-color
+    text-color
+    background-color on hover
+    color on hover
+
+    
+  )
+ */
+.tab-default {
+  width: 100px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #202020;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s; }
+  .tab-default:hover {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06); }
+  .tab-default:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9); }
+
+.tab-active {
+  width: 100px;
+  height: 30px;
+  background-color: #69bef9;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s; }
+  .tab-active:hover {
+    background-color: #9ad3fb;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06); }
+  .tab-active:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9); }
 
 body {
   background: url("/public/build/assets/images/background.png") no-repeat center center fixed;
@@ -87,5 +199,9 @@ body {
   padding: 0;
   position: relative;
   font-family: 'Roboto', sans-serif; }
+
+.heading-title, .aboutme__content--header-title {
+  font-weight: 300;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map*/

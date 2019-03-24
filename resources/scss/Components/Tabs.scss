@@ -1,0 +1,53 @@
+@import "../core";
+
+
+/** @params
+  ( "tab-class-name"            : string,
+    width
+    height
+    background-color
+    text-color
+    background-color on hover
+    color on hover
+
+    
+  )
+ */
+$tabs: (
+    ("default", 100px, 30px, rgba(255, 255, 255, 0.6), #202020, #fff),
+    ("active", 100px, 30px, darken($primary-color, 10%), #fff, $primary-color)
+);
+
+// tab template
+@mixin custom-tab($w, $h, $bgc, $txt-c, $bgc-hover) {
+    @include box($w, $h);
+    background-color: $bgc;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $txt-c;
+    font-size: 14px;
+    font-weight: 500;
+    border: none; 
+    transition-duration: 0.25s;
+    &:hover {
+        background-color: $bgc-hover;
+        @include subtleShadow(0.06);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+
+}
+
+// tab generator
+@each $tab in $tabs {
+	.tab-#{nth($tab,1)} {
+		@include custom-tab (
+            #{nth($tab,2)},
+            #{nth($tab,3)},
+            #{nth($tab,4)},
+            #{nth($tab,5)},
+            #{nth($tab,6)},
+		);
+	}
+}

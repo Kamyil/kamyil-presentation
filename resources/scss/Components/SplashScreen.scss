@@ -2,16 +2,18 @@
 
 @mixin logoStyles($animation-included, $z-index) {
     @include z-index($z-index);
-    width: 50%;
+    
     display: none;
     position: fixed;
-    top: 30vh;
+    
 
     @if $animation-included {
         animation-name: scaleLogo;
         animation-duration: 3s;
         animation-delay: 1s;
     }
+    @include onSmall { top: 30vh; width: 50%; }
+    @include onMedium { top: 10vh; width: 40%; }
 }
 
 @keyframes scaleLogo {

@@ -10,3 +10,9 @@ body {
     position: relative;
     font-family: 'Roboto', sans-serif;
 }
+
+// This is global style, so that's why I put it here
+.heading-title {
+    font-weight: 300;
+    text-align: center;
+}
