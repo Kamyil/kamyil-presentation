@@ -29,7 +29,7 @@
   -ms-flex-line-pack: center;
   align-content: center; }
   .splashscreen__logo--full {
-    z-index: 4;
+    z-index: 5;
     display: none;
     position: fixed; }
     @media (min-width: 0px) {
@@ -45,7 +45,7 @@
         top: 10vh;
         width: 30%; } }
   .splashscreen__logo--empty {
-    z-index: 4;
+    z-index: 5;
     display: none;
     position: fixed;
     -webkit-animation-name: scaleLogo;
@@ -88,6 +88,8 @@
   border-radius: 5px;
   position: fixed;
   background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   top: 50%;
   left: 50%; }
   @media (min-width: 0px) {
@@ -103,6 +105,9 @@
       height: 700px;
       -webkit-transform: translateX(-45vw) translateY(-350px);
       transform: translateX(-45vw) translateY(-350px); } }
+  .aboutme__container.dark {
+    background-color: rgba(20, 20, 20, 0.9);
+    color: #fff; }
 
 .aboutme__tab {
   margin: 0 5px; }
@@ -134,7 +139,12 @@
   bottom: 0;
   position: absolute;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9); }
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
+  .aboutme__content--container.dark {
+    background-color: rgba(20, 20, 20, 0.6);
+    color: #fff; }
 
 .aboutme__content--self {
   margin: 20px 40px;
@@ -151,13 +161,13 @@
     display: none; }
 
 /** @params
-  ( "tab-class-name"            : string,
-    width: number (pixels mostly preffered)
-    height: number (pixels mostly preffered)
-    background-color: all methods supported
-    text-color: all methods supported
+  ( "tab-class-name"         : string,
+    width                    : number (pixels mostly preffered)
+    height                   : number (pixels mostly preffered)
+    background-color         : all methods supported
+    text-color               : all methods supported
     background-color on hover: all methods supported
-    color on hover: all methods supported
+    color on hover           : all methods supported
   )
  */
 .tab-default {
@@ -177,6 +187,26 @@
     -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06);
     box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06); }
   .tab-default:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9); }
+
+.tab-default-dark {
+  width: 100px;
+  height: 30px;
+  background-color: #202020;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s; }
+  .tab-default-dark:hover {
+    background-color: #303030;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06); }
+  .tab-default-dark:active {
     -webkit-transform: scale(0.9);
     transform: scale(0.9); }
 
@@ -200,12 +230,53 @@
     -webkit-transform: scale(0.9);
     transform: scale(0.9); }
 
+.tab-active-dark {
+  width: 100px;
+  height: 30px;
+  background-color: #43003c;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s; }
+  .tab-active-dark:hover {
+    background-color: #760069;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06); }
+  .tab-active-dark:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9); }
+
+.darkmode__switcher {
+  width: 25px;
+  height: 25px;
+  z-index: 3;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.11);
+  position: absolute;
+  right: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #202020;
+  bottom: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s; }
+  .darkmode__switcher.active {
+    background-color: #760069;
+    color: #fff; }
+
 body {
   background-color: #fff;
   margin: 0;
   padding: 0;
   position: relative;
   font-family: 'Roboto', sans-serif; }
+  body.dark {
+    color: #fff; }
 
 .heading-title, .aboutme__content--header-title {
   font-weight: 300;

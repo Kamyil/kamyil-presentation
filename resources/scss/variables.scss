@@ -1,4 +1,5 @@
 $primary-color: rgb(154, 211, 251);
+$secondary-color: #760069;
 
 $bps: (
 		xs: 0px,
@@ -10,7 +11,8 @@ $bps: (
 
 $z-index: (
 		aboutme-container: 2,
-		splashcreen: 3,
-		splashscreen-logo: 4,
+		darkmode-switcher: 3,
+		splashcreen: 4,
+		splashscreen-logo: 5,
 );
     

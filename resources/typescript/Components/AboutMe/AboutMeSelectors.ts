@@ -8,5 +8,8 @@ export const AboutMeSelectors = {
     CONTAINER:    ".aboutme__container",
     TAB:          ".aboutme__tab",
     HEADER_TITLE: ".aboutme__content--header-title",
-    CONTENT:      ".aboutme__content--self",
+    CONTENT:  {
+        SELF     : ".aboutme__content--self",
+        CONTAINER: ".aboutme__content--container"
+    }    
 }

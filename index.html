@@ -11,7 +11,7 @@
 </head>
 
 <!-- I know that's the dirty way to do, but this method is stable and secure to load full-width background image with compiled styles -->
-<body style="background: url('public/build/assets/images/background.png') no-repeat center center fixed;">
+<body style="background: url('public/build/assets/images/bg-dark.jpg') no-repeat center center fixed;">
 
 <aside class="splashscreen">
     <img src="./public/build/assets/images/kamyilLogo__full.png" alt="Kamyil-logo" class="splashscreen__logo--full">
@@ -20,8 +20,11 @@
     <p class="splashscreen__caption">Creating interfaces of tommorow</p>
 </aside>
 
-<section class="aboutme__container">
+<section class="aboutme__container" data-dark-mode="false">
     <h1 class="heading-title"> About me </h1>
+    <button class="darkmode__switcher">
+        <i class="far fa-moon"></i>
+    </button>
 
     <div class="aboutme__tab--container" role="tablist">
         <button class="aboutme__tab tab-active" role="tab" data-tab-name="mainly">Mainly</button>
@@ -89,7 +92,7 @@
         </p>
 
     </div>
-
+    
 </section>
 
 

@@ -11,12 +11,15 @@ export const AboutMe = (() => {
 
         switchTabWithContent(TAB, contentToSwitchOn, false);
         switchTabWithContent(HEADER_TITLE, contentToSwitchOn, true);
-        switchTabWithContent(CONTENT, contentToSwitchOn, true);
+        switchTabWithContent(CONTENT.SELF, contentToSwitchOn, true);
     }
 
     function switchTabWithContent(selector: string, contentToSwitchOn: string, hideElement: boolean) {
         const { CLASS_NAME } = AboutMeSelectors;
         $(selector).each((index, element) => {
+            
+            
+
 
             $(element).hasClass(CLASS_NAME.CONTENT) ||
             $(element).hasClass(CLASS_NAME.HEADER_TITLE)
