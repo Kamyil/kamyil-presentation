@@ -36,10 +36,14 @@
       .splashscreen__logo--full {
         top: 30vh;
         width: 50%; } }
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       .splashscreen__logo--full {
         top: 10vh;
         width: 40%; } }
+    @media (min-width: 992px) {
+      .splashscreen__logo--full {
+        top: 10vh;
+        width: 30%; } }
   .splashscreen__logo--empty {
     z-index: 4;
     display: none;
@@ -54,10 +58,14 @@
       .splashscreen__logo--empty {
         top: 30vh;
         width: 50%; } }
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       .splashscreen__logo--empty {
         top: 10vh;
         width: 40%; } }
+    @media (min-width: 992px) {
+      .splashscreen__logo--empty {
+        top: 10vh;
+        width: 30%; } }
   .splashscreen__title {
     font-size: 3rem;
     text-align: center;
@@ -74,6 +82,7 @@
     bottom: 18vh; }
 
 .aboutme__container {
+  max-width: 1300px;
   z-index: 2;
   display: none;
   border-radius: 5px;
@@ -86,13 +95,14 @@
       width: 90vw;
       height: 90vh;
       -webkit-transform: translateX(-45vw) translateY(-45vh);
-      transform: translateX(-45vw) translateY(-45vh); } }
-  @media (min-width: 992px) {
+      transform: translateX(-45vw) translateY(-45vh);
+      overflow-y: auto; } }
+  @media (min-width: 768px) {
     .aboutme__container {
       width: 90vw;
-      height: 800px;
-      -webkit-transform: translateX(-45vw) translateY(-400px);
-      transform: translateX(-45vw) translateY(-400px); } }
+      height: 700px;
+      -webkit-transform: translateX(-45vw) translateY(-350px);
+      transform: translateX(-45vw) translateY(-350px); } }
 
 .aboutme__tab {
   margin: 0 5px; }
@@ -127,7 +137,7 @@
   background-color: rgba(255, 255, 255, 0.9); }
 
 .aboutme__content--self {
-  margin: 20px;
+  margin: 20px 40px;
   line-height: 30px; }
   .aboutme__content--self img {
     float: left;
@@ -142,14 +152,12 @@
 
 /** @params
   ( "tab-class-name"            : string,
-    width
-    height
-    background-color
-    text-color
-    background-color on hover
-    color on hover
-
-    
+    width: number (pixels mostly preffered)
+    height: number (pixels mostly preffered)
+    background-color: all methods supported
+    text-color: all methods supported
+    background-color on hover: all methods supported
+    color on hover: all methods supported
   )
  */
 .tab-default {
@@ -193,7 +201,6 @@
     transform: scale(0.9); }
 
 body {
-  background: url("/public/build/assets/images/background.png") no-repeat center center fixed;
   background-color: #fff;
   margin: 0;
   padding: 0;

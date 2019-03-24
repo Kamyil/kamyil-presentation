@@ -7,7 +7,13 @@
 }
 
 @mixin onMedium {
-	@media (min-width: map-get($bps,lg)) {
+	@media (min-width: map-get($bps, md)) {
+		@content;
+	}
+}
+
+@mixin onLarge {
+	@media (min-width: map-get($bps, lg)) {
 		@content;
 	}
 }

@@ -4,80 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/build/css/style.css">
+    <link rel="stylesheet" href="./public/build/css/style.css">
 </head>
 
-<body>
-    <aside class="splashscreen">
-        <img src="/public/build/assets/images/kamyilLogo__full.png" alt="Kamyil-logo" class="splashscreen__logo--full">
-        <img src="/public/build/assets/images/kamyilLogo__empty.png" class="splashscreen__logo--empty" alt="My Logo">
-        <p class="splashscreen__title">Kamil Bugajak</p>
-        <p class="splashscreen__caption">Creating interfaces of tommorow</p>
-    </aside>
+<!-- I know that's the dirty way to do, but this method is stable and secure to load full-width background image with compiled styles -->
+<body style="background: url('public/build/assets/images/background.png') no-repeat center center fixed;">
 
-    <section class="aboutme__container">
-        <h1 class="heading-title"> About me </h1>
+<aside class="splashscreen">
+    <img src="./public/build/assets/images/kamyilLogo__full.png" alt="Kamyil-logo" class="splashscreen__logo--full">
+    <img src="./public/build/assets/images/kamyilLogo__empty.png" class="splashscreen__logo--empty" alt="My Logo">
+    <p class="splashscreen__title">Kamil Bugajak</p>
+    <p class="splashscreen__caption">Creating interfaces of tommorow</p>
+</aside>
 
-        <div class="aboutme__tab--container" role="tablist">
-            <button class="aboutme__tab tab-active" role="tab" data-tab-name="mainly">Mainly</button>
-            <button class="aboutme__tab tab-default" role="tab" data-tab-name="technologies">Technologies</button>
-            <button class="aboutme__tab tab-default" role="tab" data-tab-name="architecture">Architecture</button>
-            <button class="aboutme__tab tab-default" role="tab" data-tab-name="jquery">JQuery?</button>
-        </div>
+<section class="aboutme__container">
+    <h1 class="heading-title"> About me </h1>
 
-        <div class="aboutme__content--container">
-            <h2 class="aboutme__content--header-title active" data-tab-name="mainly">Mainly</h2>
-            <h2 class="aboutme__content--header-title" data-tab-name="technologies">Technologies</h2>
-            <h2 class="aboutme__content--header-title" data-tab-name="architecture">Architecture</h2>
-            <h2 class="aboutme__content--header-title" data-tab-name="jquery">Why the hell there is JQuery here?</h2>
+    <div class="aboutme__tab--container" role="tablist">
+        <button class="aboutme__tab tab-active" role="tab" data-tab-name="mainly">Mainly</button>
+        <button class="aboutme__tab tab-default" role="tab" data-tab-name="technologies">Technologies</button>
+        <button class="aboutme__tab tab-default" role="tab" data-tab-name="architecture">Architecture</button>
+        <button class="aboutme__tab tab-default" role="tab" data-tab-name="jquery">JQuery?</button>
+    </div>
 
-            <p class="aboutme__content--self active" data-tab-name="mainly" role="contentinfo"> 
-                <img src="/public/build/assets/images/mypicture_rounded.jpeg" alt="Kamil Bugajak's picture">
+    <div class="aboutme__content--container">
+        <h2 class="aboutme__content--header-title active" data-tab-name="mainly">Mainly</h2>
+        <h2 class="aboutme__content--header-title" data-tab-name="technologies">Technologies</h2>
+        <h2 class="aboutme__content--header-title" data-tab-name="architecture">Architecture</h2>
+        <h2 class="aboutme__content--header-title" data-tab-name="jquery">Why the hell there is JQuery here?</h2>
+
+        <p class="aboutme__content--self active" data-tab-name="mainly" role="contentinfo">
+            <img src="./public/build/assets/images/mypicture_rounded.jpeg" alt="Kamil Bugajak's picture">
             Hi! I'm Kamil and these are some informations about me. I'm a Front-End Developer for around 2 years,
-            1 year as a freelancer and another one as a member of developer team.        
-            
-            </p>
-            <p class="aboutme__content--self" data-tab-name="technologies" role="contentinfo"> 
-                Currently at work I'm using TypeScript & JQuery & SCSS which is great combination of tools to make
-                websites with views made with PHP (unfortunetly). These are compiled by Webpack with Babel, PostCSS and images compression included.
+            1 year as a freelancer and another one as a member of developer team. Creating beautiful and reusable UIs is
+            my passion. My main goal in my carrier is to make outstanding, fabulous interfaces
+            which are beautiful and easy to use by user, and easly maintainable and reusable by developer. In future I
+            would like to become Full Stack Developer also.
 
-                For my individual projects I'm mostly using React & React-Native, but there are also some cases where I have to use use Angular or Vue.
-                All of them with Typescript included (NG has already built-in ofc.) since I don't get any sense of writing production code without static typing.
-                In my opinion code without static typing is subject to hard-resolvable bugs.  
-            </p>
-            <p class="aboutme__content--self" data-tab-name="architecture" role="contentinfo"> 
-                In all of my projects I'm building interfaces based on components. In my opinion
-                this is the best way to create UI with keeping harmony and clean code in the same time.
+            I spend my free time playing on ukulele and learning new things :)
 
-                In Angular, Vue and React components are already included, so these frameworks are undoubtable my first choice
-                to use when it comes to create front-end, but unfortunetly there are also some cases where I cannot use them. In this case
-                I'm using mini-architecture that you can see right now in my files. In resources/ folder you can see TypeScript and SCSS folders with Component subfolders. 
-                All of these Components are imported into main.(ts/scss) files which later they will be bundled with Webpack into 2 separated files: bundle.js and style.css. These psuedo-components 
-                help me make non REST-API sites much easier.  
-            
-            </p>
-            <p class="aboutme__content--self" data-tab-name="jquery" role="contentinfo"> Well... what could I say?
-                In this project I wanted to show you my way to solve my every-day problems at work, where unfortunetly I can't put
-                any of these great JavaScript frameworks like React, Vue or Angular, since views of their applications are made 
-                with PHP. In this case I was forced to use JQuery since there is no better framework to use in projects without REST API.
-                <br><br>
-                <b>Why is it the best in my opinion?</b>
-                <br><br>
-                
-                There are a lot of great jquery-based plugins to use with like Select2, Selectric (this is maybe not great at all but at last it's easy to style it), pretty-checkbox etc.
-                that help me make apps much faster. 
-            </p>
+        </p>
+        <p class="aboutme__content--self" data-tab-name="technologies" role="contentinfo">
+            Currently at work I'm using TypeScript & JQuery & SCSS which is great combination of tools to make
+            websites with views made with PHP (unfortunetly). These are compiled by Webpack with Babel, PostCSS and
+            images compression included.
 
-        </div>
+            For my individual projects I'm mostly using React & React-Native, but there are also some cases where I have
+            to use use Angular or Vue.
+            All of them with Typescript included (NG has already built-in ofc.) since I don't get any sense of writing
+            production code without static typing.
+            In my opinion code without static typing is subject to hard-resolvable bugs.
+        </p>
+        <p class="aboutme__content--self" data-tab-name="architecture" role="contentinfo">
+            In all of my projects I'm building interfaces based on components. In my opinion
+            this is the best way to create UI with keeping harmony and clean code in the same time.
 
-    </section>
+            In Angular, Vue and React components are already included, so these frameworks are undoubtable my first
+            choice
+            to use when it comes to create front-end, but unfortunetly there are also some cases where I cannot use
+            them. In this case
+            I'm using mini-architecture that you can see right now in my files. In resources/ folder you can see
+            TypeScript and SCSS folders with Component subfolders.
+            All of these Components are imported into main.(ts/scss) files which later they will be bundled with Webpack
+            into 2 separated files: bundle.js and style.css. These psuedo-components
+            help me make non REST-API sites much easier.
+
+        </p>
+        <p class="aboutme__content--self" data-tab-name="jquery" role="contentinfo"> Well... what could I say?
+            In this project I wanted to show you my way to solve my every-day problems at work, where unfortunetly I
+            can't put
+            any of these great JavaScript frameworks like React, Vue or Angular, since views of their applications are
+            made
+            with PHP. In this case I was forced to use JQuery since there is no better framework to use in projects
+            without REST API.
+            <br><br>
+            <b>Why is it the best in my opinion?</b>
+            <br><br>
+
+            There are a lot of great jquery-based plugins to use with like Select2, Selectric (this is maybe not great
+            at all but at last it's easy to style it), pretty-checkbox etc.
+            that help me make apps much faster.
+        </p>
+
+    </div>
+
+</section>
 
 
-
-    <script src="/public/build/js/bundle.js"></script>
+<script src="./public/build/js/bundle.js"></script>
 </body>
 
 </html>
