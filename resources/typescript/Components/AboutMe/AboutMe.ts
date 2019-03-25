@@ -1,6 +1,7 @@
 import * as $               from "jquery";
 import { $body }            from "../../Core/Body";
 import { AboutMeSelectors } from './AboutMeSelectors';
+import { TabClasses }       from "../TabClasses";
 
 export const AboutMe = (() => {
 
@@ -15,24 +16,38 @@ export const AboutMe = (() => {
     }
 
     function switchTabWithContent(selector: string, contentToSwitchOn: string, hideElement: boolean) {
-        const { CLASS_NAME } = AboutMeSelectors;
+        const {CLASS_NAME} = AboutMeSelectors;
+        const { TAB_DEFAULT, TAB_ACTIVE, TAB_ACTIVE_DARK, TAB_DEFAULT_DARK } = TabClasses;
+        const isDarkModeOn: boolean = $(AboutMeSelectors.CONTAINER).data('dark-mode') as boolean;
+
         $(selector).each((index, element) => {
-            
-            
-
-
-            $(element).hasClass(CLASS_NAME.CONTENT) ||
-            $(element).hasClass(CLASS_NAME.HEADER_TITLE)
-                ? $(element).removeClass('active')
-                : $(element).removeClass('tab-active').addClass('tab-default');
+            if (isDarkModeOn) {
+                $(element).hasClass(CLASS_NAME.CONTENT) ||
+                $(element).hasClass(CLASS_NAME.HEADER_TITLE)
+                    ? $(element).removeClass('active')
+                    : $(element).removeClass(TAB_ACTIVE_DARK).addClass(TAB_DEFAULT_DARK);
+            } else {
+                $(element).hasClass(CLASS_NAME.CONTENT) ||
+                $(element).hasClass(CLASS_NAME.HEADER_TITLE)
+                    ? $(element).removeClass('active')
+                    : $(element).removeClass(TAB_ACTIVE).addClass(TAB_DEFAULT);
+            }
 
             hideElement ? $(element).hide('fast') : false;
 
             if (contentToSwitchOn == $(element).data("tab-name")) {
-                $(element).hasClass(CLASS_NAME.CONTENT) ||
-                $(element).hasClass(CLASS_NAME.HEADER_TITLE)
-                    ? $(element).addClass('active')
-                    : $(element).addClass('tab-active').removeClass('tab-default');
+                if (isDarkModeOn) {
+                    $(element).hasClass(CLASS_NAME.CONTENT) ||
+                    $(element).hasClass(CLASS_NAME.HEADER_TITLE)
+                        ? $(element).addClass('active')
+                        : $(element).addClass(TAB_ACTIVE_DARK).removeClass(TAB_DEFAULT_DARK);
+                } else {
+                    $(element).hasClass(CLASS_NAME.CONTENT) ||
+                    $(element).hasClass(CLASS_NAME.HEADER_TITLE)
+                        ? $(element).addClass('active')
+                        : $(element).addClass(TAB_ACTIVE).removeClass(TAB_DEFAULT);
+                }
+
                 $(element).show('slow');
             }
         });

@@ -88,8 +88,8 @@
   border-radius: 5px;
   position: fixed;
   background-color: rgba(255, 255, 255, 0.5);
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
   top: 50%;
   left: 50%; }
   @media (min-width: 0px) {
@@ -140,8 +140,8 @@
   position: absolute;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.6);
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s; }
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s; }
   .aboutme__content--container.dark {
     background-color: rgba(20, 20, 20, 0.6);
     color: #fff; }

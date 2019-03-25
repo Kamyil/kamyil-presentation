@@ -15,7 +15,7 @@ export const SplashScreen = (() => {
     }
 
     function initSplashScreenAnimation() {
-        const {CONTAINER, LOGO, TITLE, CAPTION} = Selector;
+        const { CONTAINER, LOGO, TITLE, CAPTION } = Selector;
 
         // Show full rotated logo with caption and title on start
         $(LOGO.FULL).fadeIn(1000);
@@ -33,7 +33,7 @@ export const SplashScreen = (() => {
         $(CAPTION).delay(2000).fadeOut(500);
         $(CONTAINER).delay(6500).fadeOut(500);
         $(LOGO.EMPTY).delay(1000).fadeOut(500);
-        $(AboutMeSelectors.CONTAINER).delay(6500).show(500);
+        $(AboutMeSelectors.CONTAINER).delay(6500).fadeIn(700);
 
 
     }

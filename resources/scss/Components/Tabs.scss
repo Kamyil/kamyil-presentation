@@ -13,8 +13,7 @@
  */
 $tabs: (
 	("default", 100px, 30px, rgba(255, 255, 255, 0.6), #202020, #fff),
-	("default-dark", 100px, 30px, #202020,rgba(255, 255, 255, 0.6), #303030),
-
+	("default-dark", 100px, 30px, #202020, rgba(255, 255, 255, 0.6), #303030),
 	("active", 100px, 30px, darken($primary-color, 10%), #fff, $primary-color),
 	("active-dark", 100px, 30px, darken($secondary-color, 10%), #fff, $secondary-color)
 );
@@ -44,11 +43,11 @@ $tabs: (
 @each $tab in $tabs {
 	.tab-#{nth($tab,1)} {
 		@include custom-tab (
-				#{nth($tab,2)},
-				#{nth($tab,3)},
-				#{nth($tab,4)},
-				#{nth($tab,5)},
-				#{nth($tab,6)}
+						#{nth($tab,2)},
+						#{nth($tab,3)},
+						#{nth($tab,4)},
+						#{nth($tab,5)},
+						#{nth($tab,6)}
 		);
 	}
 }
