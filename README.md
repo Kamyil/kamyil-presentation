@@ -20,6 +20,7 @@ If you're not building this app, ignore this info.
     - BEM for naming HTML id's and classes
     - PascalCase for Components
     - camelCase for functions  
+    - ANGRY_CASE for Selectors and configs
 
 - Folder structure 
     - **resources/** keeps all assets (with images and fonts), typescript to be bundled into bundle.js and scss to be bundled into style.css.
@@ -34,6 +35,9 @@ If you're not building this app, ignore this info.
  and that's all :)
  
  ### Do you write classes?
- Yes, i'm writing classes when I need to. When code needs to be fully reusable or it has to have some OOP features like inheritance, polymorphism etc. In these cases I use OOP, but I found functional components to be easier to create and maintain when it comes to make simple UI :)   
+ Yes, i'm writing classes when I need to. When code needs to be fully reusable or it has to have some OOP features like inheritance, polymorphism etc. In these cases I use OOP, but I found functional components to be easier to create and maintain when it comes to make simple UI :)
+ 
+ ### Do you use interfaces?   
+ Yes, a lot! But in this project I only used Selectors and configs, which all of them were strings only, so there wasn't any point to put interfaces there
  
  
